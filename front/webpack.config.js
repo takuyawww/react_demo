@@ -16,6 +16,24 @@ module.exports = {
         test: /\.tsx?$/, 
         loader: "ts-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-modules-typescript-loader"},
+          { loader: "css-loader", options: { modules: true } },
+          // {
+          //   loader: "css-loader",
+          //   options: {
+          //     localsConvention: "camelCase",
+          //     modules: {
+          //       localIdentName: "[path][name]__[local]--[hash:base64:5]"
+          //     }
+          //   }
+          // }
+        ]
       }
     ],
     // rules: [
@@ -49,24 +67,24 @@ module.exports = {
     //       }
     //     }
     //   },
-    //   {
-    //     test: /\.css$/,
-    //     exclude: /node_modules/,
-    //     use: [
-    //       {
-    //         loader: "style-loader"
-    //       },
-    //       {
-    //         loader: "css-loader",
-    //         options: {
-    //           localsConvention: "camelCase",
-    //           modules: {
-    //             localIdentName: "[path][name]__[local]--[hash:base64:5]"
-    //           }
-    //         }
-    //       }
-    //     ]
-    //   }
+      // {
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     {
+      //       loader: "style-loader"
+      //     },
+      //     {
+      //       loader: "css-loader",
+      //       options: {
+      //         localsConvention: "camelCase",
+      //         modules: {
+      //           localIdentName: "[path][name]__[local]--[hash:base64:5]"
+      //         }
+      //       }
+      //     }
+        
+      // }
     // ]
   }
 }
