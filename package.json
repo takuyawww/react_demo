@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "typings-for-css-modules-loader": "^1.7.0"
+  }
+}
