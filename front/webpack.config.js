@@ -24,67 +24,8 @@ module.exports = {
           { loader: "style-loader" },
           { loader: "css-modules-typescript-loader"},
           { loader: "css-loader", options: { modules: true } },
-          // {
-          //   loader: "css-loader",
-          //   options: {
-          //     localsConvention: "camelCase",
-          //     modules: {
-          //       localIdentName: "[path][name]__[local]--[hash:base64:5]"
-          //     }
-          //   }
-          // }
         ]
       }
     ],
-    // rules: [
-    //   {
-    //     test: /(\.ts|\.tsx)$/,
-    //     exclude: /node_modules/,
-    //     use: {
-    //       loader: "ts-loader",
-    //       options: {
-    //         // presets: [
-    //         //   [
-    //         //     "@babel/preset-env",
-    //         //     {
-    //         //       targets: {
-    //         //         node: "current"
-    //         //       }
-    //         //     }
-    //         //   ],
-    //         //   "@babel/preset-react"
-    //         // ],
-    //         // plugins: [
-    //         //   [
-    //         //     "babel-plugin-import",
-    //         //     {
-    //         //       libraryName: "@material-ui/icons",
-    //         //       libraryDirectory: "",
-    //         //       camel2DashComponentName: false
-    //         //     }
-    //         //   ]
-    //         // ]
-    //       }
-    //     }
-    //   },
-      // {
-      //   test: /\.css$/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: "style-loader"
-      //     },
-      //     {
-      //       loader: "css-loader",
-      //       options: {
-      //         localsConvention: "camelCase",
-      //         modules: {
-      //           localIdentName: "[path][name]__[local]--[hash:base64:5]"
-      //         }
-      //       }
-      //     }
-        
-      // }
-    // ]
   }
 }
