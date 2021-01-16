@@ -1,32 +1,38 @@
 import React from 'react'
-import { GridList } from '@material-ui/core'
+import { GridList, Typography } from '@material-ui/core'
 import dayjs from 'dayjs'
-import 'dayjs/locale/ja'
-dayjs.locale('ja')
 // import styles
 import * as styles from './style.css'
+// import components
+import CalendarElement from '../CalendarElement/'
+// import services
+import { createCalendar } from '../../services/calendar'
+// import types
+import { DaysType } from '../../types/commonTypes'
 
-const createCalender = () => {
-  const firstDay: dayjs.Dayjs = dayjs().startOf('month')
-  const firstDayIndex: number = firstDay.day()
-  return Array(35)
-    .fill(0)
-    .map((_: number, i: number) => {
-      const diffFromFirstDay: number = i - firstDayIndex
-      const day: dayjs.Dayjs = firstDay.add(diffFromFirstDay, 'day')
-      return day
-    })
-}
-
-const calendar = createCalender()
+const calendar = createCalendar()
+const days: DaysType[] = ['月', '火', '水', '木', '金', '土', '日']
   
 const CalenderBoard = () => {
   return (
     <div className={styles.container}>
       <GridList className={styles.grid} cols={7} spacing={0} cellHeight="auto">
+        {days.map((d: string, i: number) => {
+          <li key={i}>
+            <Typography
+              className={styles.days}
+              color="textSecondary"
+              align="center"
+              variant="caption"
+              component="div"
+            >
+              {d}
+            </Typography>
+          </li>
+        })}
         {calendar.map((c: dayjs.Dayjs, i: number) => (
           <li key={i}>
-            <div className={styles.element}>{c.format('D')}</div>
+            <CalendarElement day={c}></CalendarElement>
           </li>
         ))}
       </GridList>
