@@ -4,16 +4,16 @@ import dayjs from 'dayjs'
 // import styles
 import * as styles from './style.css'
 // import components
-import CalendarElement from '../CalendarElement/'
+import CalendarElement from '../CalendarElement'
 // import services
 import { createCalendar } from '../../services/calendar'
 // import types
 import { DaysType } from '../../types/commonTypes'
 
-const calendar = createCalendar()
+// const calendar = createCalendar()
 const days: DaysType[] = ['月', '火', '水', '木', '金', '土', '日']
   
-const CalenderBoard = () => {
+const CalenderBoard = ({ calendar }) => {
   return (
     <div className={styles.container}>
       <GridList className={styles.grid} cols={7} spacing={0} cellHeight="auto">
