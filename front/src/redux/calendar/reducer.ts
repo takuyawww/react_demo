@@ -14,7 +14,16 @@ interface InitialState {
 
 const initialState: InitialState = formatMonth(day)
 
-const calendarReducer = (state: InitialState = initialState, action) => {
+const calendarReducer = (
+  state: InitialState = initialState, 
+  action: {
+    type: string
+    payload: {
+      year: number
+      month: number
+    }
+  }
+) => {
   const { type, payload } = action
 
   switch (type) {

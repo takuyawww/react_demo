@@ -9,7 +9,10 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  setMonth: month => {
+  setMonth: (month: {
+    year: number
+    month: number
+  }):void => {
     dispatch(calendarSetMonth(month))
   }
 })

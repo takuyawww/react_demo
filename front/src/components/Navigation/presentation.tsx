@@ -19,7 +19,7 @@ const Navigation = ({ setNextMonth, setPreviousMonth }) => {
         <DehazeIcon />
       </IconButton>
       <img src="/images/calendar_icon.png" width="40" height="40" />
-      <StyledTypography color="textSecondary" variant="h5" component="h1">
+      <StyledTypography color="textSecondary" variant="h5">
         カレンダー
       </StyledTypography>
       <IconButton size="small" onClick={setPreviousMonth}>

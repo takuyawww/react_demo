@@ -2,11 +2,20 @@ import { connect } from 'react-redux'
 import CalendarBoard from './presentation'
 import { createCalendar } from '../../services/calendar'
 
-const mapStateToProps = (state) => ({
+interface StateProps {
+  calendar: CalendarProps
+}
+
+type CalendarProps = {
+  year: number
+  month: number
+}
+
+const mapStateToProps = (state: StateProps) => ({
   calendar: state.calendar
 })
 
-const mergeProps = (stateProps) => ({
+const mergeProps = (stateProps: StateProps) => ({
   calendar: createCalendar(stateProps.calendar)
 })
 
